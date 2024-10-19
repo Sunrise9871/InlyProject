@@ -24,9 +24,15 @@ namespace Selector.View
             _playerInput = playerInput;
             _playerInput.HorizontalMove += OnHorizontalMove;
             _playerInput.VerticalMove += OnVerticalMove;
+        }
+
+        private void Start()
+        {
+            Spawn();
+            
+            if (_items.Count > 0)
+                OnThumbnailSelected(0);
         } 
-        
-        private void Start() => Spawn();
         
         private void OnDestroy()
         {
